@@ -1,0 +1,16 @@
+object Versions {
+    const val core_ktx_ver = "1.12.0"
+    const val appcompat_ver =  "1.6.1"
+    const val material_ver = "1.11.0"
+    const val junit_ver = "4.13.2"
+    const val test_ext_ver = "1.1.5"
+    const val test_espresso_ver = "3.5.1"
+    const val lifecycle_ver = "2.6.2"
+    const val constraintlayout_ver = "2.1.4"
+    const val kotlin_ver = "1.4.0"
+    const val kotlinCoroutines_ver = "1.7.1"
+    const val dagger_ver = "2.46.1"
+    const val kotlinx_serialization_ver = "1.5.1"
+    const val nav_ver = "2.5.3"
+    const val guava_ver = "30.1.1-jre"
+}
