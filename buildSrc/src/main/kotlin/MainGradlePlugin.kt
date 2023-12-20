@@ -14,7 +14,7 @@ class MainGradlePlugin : Plugin<Project> {
             plugin("android-library")
             plugin("kotlin-android")
             plugin("kotlin-kapt")
-            plugin("androidx.navigation.safeargs.kotlin")
+
         }
     }
 

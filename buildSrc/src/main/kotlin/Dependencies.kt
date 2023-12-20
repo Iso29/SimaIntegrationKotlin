@@ -17,22 +17,31 @@ object Dependencies {
     const val coroutines_android ="org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinCoroutines_ver}"
     const val kotlinx_serialization ="org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinx_serialization_ver}"
 
-    const val dagger_common = "com.google.dagger:dagger:${Versions.dagger_ver}"
-    const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger_ver}"
+    const val dagger_hilt = "com.google.dagger:hilt-android:${Versions.hilt_ver}"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_ver}"
+
+    const val spongycastle_core = "com.madgag.spongycastle:core:${Versions.spongycastle_ver}"
+    const val spongycastle_bcpkix = "com.madgag.spongycastle:bcpkix-jdk15on:${Versions.spongycastle_ver}"
+
+    const val tom_roush_pdfbox = "com.tom-roush:pdfbox-android:${Versions.pdfbox_ver}"
 
     const val test_ext = "androidx.test.ext:junit:${Versions.test_ext_ver}"
     const val test_espresso = "androidx.test.espresso:espresso-core:${Versions.test_espresso_ver}"
     const val junit = "junit:junit:${Versions.junit_ver}"
 
-    const val guava = "com.google.guava:guava:${Versions.guava_ver}"
 }
 
 fun DependencyHandler.dataModule(){
     implementation(project(":data"))
 }
 
-fun DependencyHandler.guava(){
-    implementation(Dependencies.guava)
+fun DependencyHandler.spongycastle(){
+    implementation(Dependencies.spongycastle_core)
+    implementation(Dependencies.spongycastle_bcpkix)
+}
+
+fun DependencyHandler.pdfbox(){
+    implementation(Dependencies.tom_roush_pdfbox)
 }
 
 fun DependencyHandler.domainModule(){
@@ -60,9 +69,9 @@ fun DependencyHandler.jetBrains(){
     implementation(Dependencies.kotlinx_serialization)
 }
 
-fun DependencyHandler.dagger(){
-    implementation(Dependencies.dagger_common)
-    kapt(Dependencies.dagger_compiler)
+fun DependencyHandler.hilt(){
+    implementation(Dependencies.dagger_hilt)
+    kapt(Dependencies.hilt_compiler)
 }
 
 fun DependencyHandler.allTest(){

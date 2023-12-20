@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -26,6 +30,10 @@ android {
             )
         }
     }
+
+    buildFeatures{
+        viewBinding =true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_18
         targetCompatibility = JavaVersion.VERSION_18
@@ -37,7 +45,17 @@ android {
 
 dependencies {
     navigation()
+    jetBrains()
     androidx()
     allTest()
-    domainModule()
+//    implementation("com.google.dagger:hilt-android:2.44")
+//    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    hilt()
+//    domainModule()
+//    dataModule()
 }
+//kapt {
+//    correctErrorTypes = true
+//}
+
+

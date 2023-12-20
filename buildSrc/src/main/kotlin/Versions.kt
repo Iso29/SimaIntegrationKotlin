@@ -9,8 +9,9 @@ object Versions {
     const val constraintlayout_ver = "2.1.4"
     const val kotlin_ver = "1.4.0"
     const val kotlinCoroutines_ver = "1.7.1"
-    const val dagger_ver = "2.46.1"
     const val kotlinx_serialization_ver = "1.5.1"
     const val nav_ver = "2.5.3"
-    const val guava_ver = "30.1.1-jre"
+    const val spongycastle_ver = "1.58.0.0"
+    const val pdfbox_ver = "2.0.25.0"
+    const val hilt_ver = "2.44"
 }

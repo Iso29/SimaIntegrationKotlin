@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SimaIntegrationKotlin</string>
+    <string name="enter_your_fin">Enter your FIN</string>
+    <string name="create_and_sign_pdf">Create and Sign PDF</string>
+    <string name="pick_and_sign_pdf">Pick and Sign PDF</string>
 </resources>
