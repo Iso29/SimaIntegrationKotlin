@@ -1,5 +1,7 @@
 package com.example.data.services
 
-interface PickPDfService {
+import android.content.Intent
 
+interface PickPDfService {
+    fun startPickIntent():Intent?
 }

@@ -1,6 +1,7 @@
 package com.example.simaintegrationkotlin.common.extention
 
 import android.os.Build
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
@@ -13,4 +14,8 @@ inline fun <reified T : java.io.Serializable> Fragment.args(key: String) = lazy 
     } else {
         arguments?.getSerializable(key) as? T
     }
+}
+
+fun Fragment.makeToast(msg : String){
+    Toast.makeText(context,msg,Toast.LENGTH_SHORT).show()
 }

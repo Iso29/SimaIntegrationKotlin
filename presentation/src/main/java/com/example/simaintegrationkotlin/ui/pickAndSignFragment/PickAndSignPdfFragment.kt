@@ -10,9 +10,8 @@ import com.example.simaintegrationkotlin.databinding.FragmentPickAndSignPdfBindi
 import com.example.simaintegrationkotlin.ui.pickAndSignFragment.fragmentItems.SignChallengeFragment
 import com.example.simaintegrationkotlin.ui.pickAndSignFragment.fragmentItems.SignPdfFragment
 import com.google.android.material.tabs.TabLayout
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class PickAndSignPdfFragment : BaseFragment<FragmentPickAndSignPdfBinding>() {
     private val viewModel : PickAndSignViewModel by viewModels()
     private var adapter: FragmentPageAdapter? = null
@@ -28,12 +27,8 @@ class PickAndSignPdfFragment : BaseFragment<FragmentPickAndSignPdfBinding>() {
 
         adapter?.submitList(
             listOf(
-                SignPdfFragment.newInstance(
-                    viewModel
-                ),
-                SignChallengeFragment.newInstance(
-                    viewModel
-                )
+                SignPdfFragment.newInstance(),
+                SignChallengeFragment.newInstance()
             )
         )
         binding?.apply{

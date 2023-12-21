@@ -14,7 +14,7 @@ android {
 dependencies {
     androidx()
     jetBrains()
-//    domainModule()
+    domainModule()
 //    hilt()
     spongycastle()
     pdfbox()

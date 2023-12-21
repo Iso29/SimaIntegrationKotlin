@@ -1,6 +1,4 @@
-package com.example.data.launchers
-
-import androidx.activity.result.ActivityResultLauncher
+package com.example.domain.launcher
 
 sealed class Launcher<ActivityResultLauncher> {
     data class PickPdfResultLauncher<ActivityResultLauncher>(val launcher : ActivityResultLauncher) : Launcher<ActivityResultLauncher>()
