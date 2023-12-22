@@ -1,3 +1,35 @@
 package com.example.data.utils
 
-//fun <T : Any> CustomResult<T>.handleResult() =
+fun CallErrors.extractMessage() : String{
+    return when(this){
+        is CallErrors.ErrorIntent -> "Intent error occurred"
+        is CallErrors.ErrorEmptyResponse -> "Empty response error occurred"
+        is CallErrors.ErrorNoCertifate -> "No certificate in signature"
+        is CallErrors.ErrorNoSigner -> "No signers in signature"
+        is CallErrors.ErrorDoesNotMatchCertificates -> "Signer '" + signerInformation.sid.issuer + ", serial# " + signerInformation.sid.serialNumber + " does not match any certificates"
+        is CallErrors.ErrorVerificationError -> "signature-verification-error"
+        is CallErrors.ErrorOperationCancelled -> "Operation cancelled"
+        is CallErrors.ErrorParsing -> "parse-result-error"
+        is CallErrors.ErrorNoDirectoryPicked -> "No directory chosen"
+        is CallErrors.ErrorSavingFile -> "Error saving file"
+        is CallErrors.ErrorCreatePDF -> "Create pdf error"
+        is CallErrors.ErrorPermissionDenied -> "Permission denied"
+        is CallErrors.ErrorWrongOperation -> "Empty or unknown operation type"
+        is CallErrors.ErrorEmptyData -> "Empty signing data (document or challenge)"
+        is CallErrors.ErrorEmptyService -> "Empty service"
+        is CallErrors.ErrorEmptyClientId -> "Empty client id"
+        is CallErrors.ErrorEmptySign -> "Empty signature"
+        is CallErrors.ErrorUserCode -> "Empty user-code (FIN)"
+        is CallErrors.ErrorLogoFormat -> "Wrong logo format"
+        is CallErrors.ErrorLogoSize -> "Logo size too big (>500KB)"
+        is CallErrors.ErrorProcessingDocument -> "Error processing document data"
+        is CallErrors.ErrorProcessingChallenge -> "Error processing challenge data"
+        is CallErrors.ErrorValidateRequest -> "Error validating signing request (wrong client id or signature)"
+        is CallErrors.ErrorTimeStamp -> "Error requesting timestamp for document signing"
+        is CallErrors.ErrorApproveRequest -> "Error approving signing request"
+        is CallErrors.ErrorSignDocumentError -> "Error singing document"
+        is CallErrors.ErrorSignChallenge -> "Error singing challenge"
+        is CallErrors.ErrorInternal -> "Internal Sima error"
+        is CallErrors.ErrorWithMessage -> "$msg"
+    }
+}

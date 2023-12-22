@@ -1,4 +1,4 @@
-package com.example.data.keys
+package com.example.domain.keys
 
 object FieldKeys {
     const val PACKAGE_NAME = "az.dpc.sima"

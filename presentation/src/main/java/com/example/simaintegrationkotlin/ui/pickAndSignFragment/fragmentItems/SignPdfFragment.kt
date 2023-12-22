@@ -11,30 +11,27 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.example.data.common.CustomResult
 import com.example.domain.launcher.Launcher
 import com.example.simaintegrationkotlin.common.base.BaseFragment
-import com.example.simaintegrationkotlin.common.extention.args
 import com.example.simaintegrationkotlin.common.extention.makeToast
 import com.example.simaintegrationkotlin.databinding.FragmentSignPdfBinding
 import com.example.simaintegrationkotlin.ui.pickAndSignFragment.PickAndSignViewModel
 
 class SignPdfFragment : BaseFragment<FragmentSignPdfBinding>(){
     private var pickPDFLauncher : Launcher.PickPdfResultLauncher<ActivityResultLauncher<Intent>>?=null
-    private val viewModel : PickAndSignViewModel? by args(VIEW_MODEL)
     override val onInflate: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSignPdfBinding
         get() = FragmentSignPdfBinding::inflate
     override val onBind: FragmentSignPdfBinding.() -> Unit
         get() = {
             initLaunchers()
-            viewModel?.state?.observe(this@SignPdfFragment,::observeState)
+//            viewModel?.state?.observe(this@SignPdfFragment,::observeState)
         }
 
 
     private fun initLaunchers(){
-        pickPDFLauncher = Launcher.PickPdfResultLauncher(launcher = registerForActivityResult<Intent, ActivityResult>(
+        pickPDFLauncher = Launcher.PickPdfResultLauncher(launcher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK && result.data != null) {
                 val documentUri = result.data!!.data
-//                viewModel.
             }
         })
     }
@@ -52,7 +49,7 @@ class SignPdfFragment : BaseFragment<FragmentSignPdfBinding>(){
     }
 
     override fun FragmentSignPdfBinding.setListeners(){
-        pickAndSignPDFButton.setOnClickListener { viewModel?.startPickIntent() }
+//        pickAndSignPDFButton.setOnClickListener { viewModel?.startPickIntent() }
     }
     companion object{
 

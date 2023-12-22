@@ -1,4 +1,4 @@
-package com.example.data.keys
+package com.example.domain.keys
 
 object UserKeys {
     const val SIMA_SIGNATURE_ALGORITHM = "SHA256withECDSA"

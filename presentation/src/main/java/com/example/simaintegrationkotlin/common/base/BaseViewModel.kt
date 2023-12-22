@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.NavArgs
 
 abstract class BaseViewModel<State>(
-    val savedStateHandle: SavedStateHandle
+    val savedStateHandle: SavedStateHandle?
 ) : ViewModel() {
 
     private val _state = MutableLiveData<State>()
@@ -39,7 +39,7 @@ abstract class BaseViewModel<State>(
 
     inline fun <reified Args : NavArgs> getArgs(): Args = Args::class.java.run {
         val argsBundle = Bundle().apply {
-            savedStateHandle.keys().forEach {
+            savedStateHandle?.keys()?.forEach {
                 putSerializable(it, savedStateHandle[it])
             }
         }

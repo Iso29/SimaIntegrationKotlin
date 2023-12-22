@@ -7,6 +7,8 @@ sealed class CallErrors {
     object ErrorEmptyResponse: CallErrors()
     object ErrorNoSigner : CallErrors()
     object ErrorNoCertifate : CallErrors()
+
+    data class ErrorWithMessage(val msg : String) : CallErrors()
     data class ErrorDoesNotMatchCertificates(val signerInformation: SignerInformation) : CallErrors()
     object ErrorVerificationError : CallErrors()
     object ErrorCreatePDF : CallErrors()
@@ -31,5 +33,4 @@ sealed class CallErrors {
     object ErrorParsing : CallErrors()
     object ErrorNoDirectoryPicked : CallErrors()
     object ErrorSavingFile : CallErrors()
-    data class ErrorException(val throwable: Throwable) : CallErrors()
 }

@@ -14,6 +14,6 @@ android {
 dependencies {
     androidx()
     jetBrains()
-    dataModule()
+//    dataModule()
 //    hilt()
 }
