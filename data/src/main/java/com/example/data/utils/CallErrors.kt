@@ -1,7 +1,5 @@
 package com.example.data.utils
 
-import org.bouncycastle.cms.SignerInformation
-
 sealed class CallErrors {
     object ErrorIntent: CallErrors()
     object ErrorEmptyResponse: CallErrors()
@@ -9,7 +7,7 @@ sealed class CallErrors {
     object ErrorNoCertifate : CallErrors()
 
     data class ErrorWithMessage(val msg : String) : CallErrors()
-    data class ErrorDoesNotMatchCertificates(val signerInformation: SignerInformation) : CallErrors()
+    data class ErrorDoesNotMatchCertificates(val signerInformation: org.spongycastle.cms.SignerInformation) : CallErrors()
     object ErrorVerificationError : CallErrors()
     object ErrorCreatePDF : CallErrors()
     object ErrorPermissionDenied : CallErrors()

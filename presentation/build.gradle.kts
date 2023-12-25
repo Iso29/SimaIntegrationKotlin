@@ -45,6 +45,7 @@ android {
 
 dependencies {
     navigation()
+    pdfbox()
     jetBrains()
     androidx()
     allTest()

@@ -1,8 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-//    kotlin("kapt")
-//    id("com.google.dagger.hilt.android")
 }
 
 apply<MainGradlePlugin>()
@@ -15,8 +13,7 @@ dependencies {
     androidx()
     jetBrains()
     domainModule()
-//    hilt()
     spongycastle()
     pdfbox()
-
+    implementation("org.apache.commons:commons-io:1.3.2")
 }

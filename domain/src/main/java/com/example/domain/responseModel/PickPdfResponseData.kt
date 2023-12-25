@@ -1,10 +1,10 @@
 package com.example.domain.responseModel
 
 import android.content.Intent
-import android.net.Uri
+import java.io.File
 
 data class PickPdfResponseData(
-    val documentUri : Uri,
+    val file : File?,
     val intent : Intent,
     val isEligibleToSign : Boolean=false
 ) {
